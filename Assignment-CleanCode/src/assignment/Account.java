@@ -23,10 +23,10 @@ public class Account {
 	}
 	
 	public void setValue(double value) throws Exception {
-		if(value < 0)
+		if(value < 0) {
 			throw new Exception();
-		else
-		{
+		}
+		else {
 			loanValue = value;
 		}
 	}
@@ -49,19 +49,20 @@ public class Account {
 		
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
-			if(account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM)
+			if(account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM) {
 //				1.25%	broker's	fee
-				totalFee += brokerFee * ( account.loanValue * Math.pow(account.rate, (account.daysActive / daysInYear)) - account.loanValue);	//	interest-principal
+				totalFee += brokerFee * ( account.loanValue * Math.pow(account.rate, (account.daysActive / daysInYear)) - account.loanValue);
+			}	//	interest-principal
 		}
 		
 		return	totalFee;
 	}
 
 	public Account(double value, double rate, AccountType accountType) throws Exception {
-		if(value < 0)
+		if(value < 0) {
 			throw new Exception();
-		else
-		{
+		}
+		else {
 			loanValue = value;
 		}
 		this.rate = rate;

@@ -3,8 +3,8 @@ package assignment;
 
 public class Account {
 	public double	loanValue,rate;	
-	public int	daysActive,accountType;
-	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
+	public int	daysActive;
+	public AccountType accountType;
 	
 	public double loan() {
 		System.out.println("The loan value is " + this.loanValue);
@@ -43,9 +43,9 @@ public class Account {
 		double totalFee=0.0;
 		Account	account;
 		int temp = 365;
-		for	(int	i=0;i<accounts.length;i++)	{
+		for	(int i=0;i<accounts.length;i++)	{
 			account=accounts[i];
-			if(account.accountType==Account.PREMIUM||account.accountType==Account.SUPER_PREMIUM)
+			if(account.accountType==AccountType.PREMIUM||account.accountType==AccountType.SUPER_PREMIUM)
 //				1.25%	broker's	fee
 				totalFee+=.0125	* ( account.loanValue*Math.pow(account.rate,(account.daysActive/365)) - account.loanValue);	//	interest-principal
 		}
@@ -53,7 +53,7 @@ public class Account {
 		return	totalFee;
 	}
 
-	public Account(double value, double rate, int accountType) throws Exception {
+	public Account(double value, double rate, AccountType accountType) throws Exception {
 		if(value<0)
 			throw new Exception();
 		else

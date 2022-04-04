@@ -2,10 +2,10 @@ package assignment;
 
 
 public class Account {
-	public double loanValue;
-	public double rate;
-	public int daysActive;
-	public AccountType accountType;
+	private double loanValue;
+	private double rate;
+	private int daysActive;
+	private AccountType accountType;
 	
 	public double loan() {
 		System.out.println("The loan value is " + this.loanValue);

@@ -31,6 +31,7 @@ public class Account {
 		}
 	}
 	
+	@Override
 	public String toString() {
 		return "Loan: " + this.loanValue + "; rate: " + this.rate + "; days active:" + daysActive + "; Type: " + accountType + ";";
 	}
@@ -45,6 +46,7 @@ public class Account {
 		Account	account;
 		int daysInYear = 365;
 		double brokerFee=0.125;
+		
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
 			if(account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM)

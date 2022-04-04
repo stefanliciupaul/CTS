@@ -17,7 +17,6 @@ public class Account implements IMonthlyRate {
 		return this.rate;
 	}
 	
-	//must have method - the lead has requested it in all classes
 	@Override
 	public double getMonthlyRate() {
 		return loanValue * rate;
@@ -51,9 +50,8 @@ public class Account implements IMonthlyRate {
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
 			if(account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM) {
-//				1.25%	broker's	fee
 				totalFee += brokerFee * ( account.loanValue * Math.pow(account.rate, (account.daysActive / daysInYear)) - account.loanValue);
-			}	//	interest-principal
+			}
 		}
 		
 		return	totalFee;

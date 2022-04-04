@@ -1,7 +1,7 @@
 package assignment;
 
 
-public class Account {
+public class Account implements IMonthlyRate {
 	private double loanValue;
 	private double rate;
 	private int daysActive;
@@ -18,6 +18,7 @@ public class Account {
 	}
 	
 	//must have method - the lead has requested it in all classes
+	@Override
 	public double getMonthlyRate() {
 		return loanValue * rate;
 	}

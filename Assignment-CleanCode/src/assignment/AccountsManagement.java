@@ -10,7 +10,7 @@ public class AccountsManagement {
 		
 		for	(int i = 0; i < accounts.length; i++)	{
 			if(accounts[i].getAccountType() == AccountType.PREMIUM || accounts[i].getAccountType() == AccountType.SUPER_PREMIUM) {
-				totalFee += brokerFee * ( accounts[i].getLoan() * Math.pow(accounts[i].getRate(), (accounts[i].getDaysActive() / daysInYear))
+				totalFee += brokerFee * ( accounts[i].getLoan() * Math.pow(accounts[i].getRate(), ((double)accounts[i].getDaysActive() / daysInYear))
 							- accounts[i].getLoan());
 			}
 		}

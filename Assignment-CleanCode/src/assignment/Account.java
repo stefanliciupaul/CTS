@@ -7,11 +7,19 @@ public class Account implements IMonthlyRate {
 	private int daysActive;
 	private AccountType accountType;
 	
-	public double loan() {
+	public double getLoan() {
 		System.out.println("The loan value is " + this.loanValue);
 		return loanValue;
 	}
 	
+	public int getDaysActive() {
+		return daysActive;
+	}
+
+	public AccountType getAccountType() {
+		return accountType;
+	}
+
 	public double getRate() {
 		System.out.println("The rate is " + rate);
 		return this.rate;
@@ -38,23 +46,6 @@ public class Account implements IMonthlyRate {
 	
 	public void print() {
 		System.out.println("This is an account");
-	}
-
-	public static double calculate(Account[] accounts)
-	{
-		double totalFee = 0.0;
-		Account	account;
-		int daysInYear = 365;
-		double brokerFee=0.125;
-		
-		for	(int i = 0; i < accounts.length; i++)	{
-			account = accounts[i];
-			if(account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM) {
-				totalFee += brokerFee * ( account.loanValue * Math.pow(account.rate, (account.daysActive / daysInYear)) - account.loanValue);
-			}
-		}
-		
-		return	totalFee;
 	}
 
 	public Account(double value, double rate, AccountType accountType) throws Exception {

@@ -34,9 +34,7 @@ public class Account implements IMonthlyRate {
 		if(value < 0) {
 			throw new Exception();
 		}
-		else {
-			loanValue = value;
-		}
+		loanValue = value;
 	}
 	
 	@Override
@@ -52,9 +50,7 @@ public class Account implements IMonthlyRate {
 		if(value < 0) {
 			throw new Exception();
 		}
-		else {
-			loanValue = value;
-		}
+		loanValue = value;
 		this.rate = rate;
 		this.accountType = accountType;
 	}

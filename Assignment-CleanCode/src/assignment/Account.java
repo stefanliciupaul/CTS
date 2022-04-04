@@ -2,7 +2,8 @@ package assignment;
 
 
 public class Account {
-	public double loanValue,rate;	
+	public double loanValue;
+	public double rate;
 	public int daysActive;
 	public AccountType accountType;
 	

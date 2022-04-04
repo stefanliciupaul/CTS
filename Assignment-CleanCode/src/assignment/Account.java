@@ -37,6 +37,15 @@ public class Account implements IMonthlyRate {
 		loanValue = value;
 	}
 	
+	
+	
+	public void setDaysActive(int daysActive) throws Exception {
+		if(daysActive < 0) {
+			throw new Exception();
+		}
+		this.daysActive = daysActive;
+	}
+
 	@Override
 	public String toString() {
 		return "Loan: " + this.loanValue + "; rate: " + this.rate + "; days active:" + daysActive + "; Type: " + accountType + ";";

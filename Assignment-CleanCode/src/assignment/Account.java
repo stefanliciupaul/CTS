@@ -51,10 +51,6 @@ public class Account implements IMonthlyRate {
 		return "Loan: " + this.loanValue + "; rate: " + this.rate + "; days active:" + daysActive + "; Type: " + accountType + ";";
 	}
 	
-	public void print() {
-		System.out.println("This is an account");
-	}
-
 	public Account(double value, double rate, AccountType accountType) throws Exception {
 		if(value < 0) {
 			throw new Exception();
